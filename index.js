@@ -64,5 +64,31 @@ const createBookings = (flightNum , pessenger = 2 , price = 500 * pessenger) => 
     console.log(booking)
     bookingEmptyArray.push(booking)
 }
-createBookings('LH 12' )
-createBookings('12', '26', '3500' )
+// createBookings('LH 12' )
+// createBookings('12', '26', '3500' )
+
+
+const createHelloWorld = () => {
+    // console.log('hsaan')
+    function returnedFunc(){
+        return 'Hello World'
+
+    }
+    return returnedFunc()
+}
+// console.log(createHelloWorld());
+
+// another example 
+
+const sayHello = () => {
+    console.log('hello');
+}
+
+function mimic (func)  {
+return function() {
+    return func()
+}
+}
+var sayHelloCopy = mimic(sayHello)
+// sayHello()
+sayHelloCopy()
