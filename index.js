@@ -139,15 +139,14 @@ const table = (num) => {
 
 // for (let x = 1; x <= 3; x++) {
 //   for (y = 1; y < x; y++) {
-    
+
 //     z = z + "+"
 //     console.log(z)
-    
+
 //   }
 // }
 
-
-// Alert Chapter Questions ===> 
+// Alert Chapter Questions ===>
 
 // 1
 
@@ -161,12 +160,12 @@ const table = (num) => {
 
 // alert('Welcome to JS land! \n Happy Coding')
 
-// 4 
+// 4
 
 // alert('Welcome to JS land! ')
 // alert('Happy Coding \n ')
 
-// 5 
+// 5
 
 // console.log('Happy coding!')
 
@@ -182,11 +181,61 @@ const table = (num) => {
 //   age : 20
 // }
 
-
-
 // const obj3 = {
 //   ...obj1 , obj2
 // }
 
 // console.log(obj3)
 // console.log(obj3.obj2.name, obj1.name)
+
+const studentDataFunc = (value) => {
+  
+  let emptyArray = [];
+  var studentSub = prompt(`write your subjects please! `);
+  let totalMarks = studentSub * 100
+  for (let i = 1; i <= studentSub; i++) {
+    let marksStudents = prompt(`write your subject No ${i} numbers`);
+    emptyArray.push(Number(marksStudents));
+  }
+  // console.log(emptyArray);
+  const sum = emptyArray.reduce((accumulator , currentValue) => accumulator + currentValue)
+  console.log(`Total Marks ${totalMarks}`)
+  console.log(`Obtained Marks ${sum}`)
+  const percentage = Math.ceil(sum / totalMarks * 100)
+  console.log(`${percentage}%`)
+
+  if(percentage >= 80){
+    console.log(`Result ::: You Got A+ Grade`)
+  }
+  else if(percentage >= 70){
+    console.log(`Result ::: You Got A Grade`)
+  }
+  else if(percentage >= 60){
+    console.log(`Result ::: You Got B Grade`)
+  }
+  else if(percentage >= 50){
+    console.log(`Result ::: You Got C Grade`)
+  }
+  else{
+    console.log(`Result ::: Fail`)
+  }
+};
+
+studentDataFunc();
+
+
+
+// const percentage = Math.ceil(sum / 500 * 100);
+// console.log('Total Marks : 500' );
+// console.log('Obtained Marks : ', sum);
+// console.log('Percentage : ', percentage);
+
+// if (percentage >= 80) {
+//     console.log('Pass : Grad A')
+// } else if (percentage >= 70) {
+//     console.log('Pass : Grad B')
+// } else if (percentage >= 65) {
+//     console.log('Pass : Grad C')
+// } else {
+//     console.log('Fail')
+// }
