@@ -147,4 +147,46 @@ const table = (num) => {
 // }
 
 
+// Alert Chapter Questions ===> 
 
+// 1
+
+// alert('Hello ! Welcome to Our Website')
+
+// 2
+
+// alert('Error ! please Enter a valid password')
+
+// 3
+
+// alert('Welcome to JS land! \n Happy Coding')
+
+// 4 
+
+// alert('Welcome to JS land! ')
+// alert('Happy Coding \n ')
+
+// 5 
+
+// console.log('Happy coding!')
+
+// 6
+
+// const obj1 = {
+//   name : 'hamza',
+//   age : 18
+// }
+
+// const obj2 = {
+//   name : 'hasan',
+//   age : 20
+// }
+
+
+
+// const obj3 = {
+//   ...obj1 , obj2
+// }
+
+// console.log(obj3)
+// console.log(obj3.obj2.name, obj1.name)
