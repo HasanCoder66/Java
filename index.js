@@ -1,3 +1,99 @@
+var xml2json = require('xml-to-json')
+var convert = require('xml-js');
+var readlineSync = require('readline-sync')
+var xml2js = require('xml2js')
+
+
+
+
+// const prompt = require('prompt-sync')();
+var userGoingToThisPath = readlineSync.question('Where you want a go \n V1 \n V2 \n V3');
+
+function firstFunction(callback) {
+    // const userInput = prompt('Press 1 to execute the first function: ');
+
+    if (userGoingToThisPath === '1') {
+        console.log('Executing the first function...');
+        // Call your first function here
+        callback();
+    } else {
+        console.log('Invalid input. Exiting...');
+    }
+}
+
+function secondFunction() {
+  if (userGoingToThisPath === '2') {
+    console.log('Executing the second function...');
+    // Call your first function here
+    callback();
+} else {
+    console.log('Invalid input. Exiting...');
+}
+}
+function thirdFunction() {
+  if (userGoingToThisPath === '3') {
+    console.log('Executing the third function...');
+    // Call your first function here
+    callback();
+} else {
+    console.log('Invalid input. Exiting...');
+}
+}
+
+// Calling the first function with the second function as a callback
+firstFunction(secondFunction);
+
+
+
+
+var inputFromUser = readlineSync.question('Give me the data convert XML to Json');
+console.log(inputFromUser)
+
+
+// <?xml version="1.0" encoding="utf-8"?>
+// <note importance="high" logged="true">
+//     <title>Happy</title>
+//     <todo>Work</todo>
+//     <todo>Play</todo>
+// </note>
+
+function xmlToJson(xmlString, callback) {
+  const parser = new xml2js.Parser();
+  
+  parser.parseString(xmlString, (err, result) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, result);
+    }
+  });
+}
+
+// Example usage:
+const xmlString =   inputFromUser || '\<root><element>value</element></root>';
+
+xmlToJson(xmlString, (err, jsonResult) => {
+  if (err) {
+    console.error('Error converting XML to JSON:', err);
+  } else {
+    console.log('JSON Result:', jsonResult);
+  }
+});
+
+
+
+// if(inputFromUser === '1'){
+
+// }
+// else if (inputFromUser === '2'){
+  
+// }
+// else if (inputFromUser === '3'){
+
+// }
+// var prompt = require('prompt');
+// prompt.start()
+
 // FUNCTION KA KAAM KISI PARTICULAR TASK KO PERFORM KERNE KA HOTA HAI
 // 26-12-2023
 // FUNCTION PRACTICE
@@ -94,13 +190,7 @@
 
 // higher order function
 
-const hello = () => {
-  console.log("hello");
-};
 
-const sayHasan = (name) => {
-  return console.log(`${name} `);
-};
 // hello(sayHasan('hasan'))
 
 // hello(sayHasan('hasan'))
@@ -126,11 +216,11 @@ const sayHasan = (name) => {
 
 // for loop and function helps create table
 
-const table = (num) => {
-  for (let i = 1; i <= 11; i++) {
-    alert(`${num} X ${i} = ${num * i}`);
-  }
-};
+// const table = (num) => {
+//   for (let i = 1; i <= 11; i++) {
+//     alert(`${num} X ${i} = ${num * i}`);
+//   }
+// };
 
 // table(4)
 
@@ -188,54 +278,90 @@ const table = (num) => {
 // console.log(obj3)
 // console.log(obj3.obj2.name, obj1.name)
 
-const studentDataFunc = (value) => {
+// const studentDataFunc = (value) => {
   
-  let emptyArray = [];
-  var studentSub = prompt(`write your subjects please! `);
-  let totalMarks = studentSub * 100
-  for (let i = 1; i <= studentSub; i++) {
-    let marksStudents = prompt(`write your subject No ${i} numbers`);
-    emptyArray.push(Number(marksStudents));
-  }
-  // console.log(emptyArray);
-  const sum = emptyArray.reduce((accumulator , currentValue) => accumulator + currentValue)
-  console.log(`Total Marks ${totalMarks}`)
-  console.log(`Obtained Marks ${sum}`)
-  const percentage = Math.ceil(sum / totalMarks * 100)
-  console.log(`${percentage}%`)
+//   let emptyArray = [];
+//   var studentSub = prompt(`write your subjects please! `);
+//   let totalMarks = studentSub * 100
+//   for (let i = 1; i <= studentSub; i++) {
+//     let marksStudents = prompt(`write your subject No ${i} numbers`);
+//     emptyArray.push(Number(marksStudents));
+//   }
+//   // console.log(emptyArray);
+//   const sum = emptyArray.reduce((accumulator , currentValue) => accumulator + currentValue)
+//   console.log(`Total Marks ${totalMarks}`)
+//   console.log(`Obtained Marks ${sum}`)
+//   const percentage = Math.ceil(sum / totalMarks * 100)
+//   console.log(`${percentage}%`)
 
-  if(percentage >= 80){
-    console.log(`Result ::: You Got A+ Grade`)
-  }
-  else if(percentage >= 70){
-    console.log(`Result ::: You Got A Grade`)
-  }
-  else if(percentage >= 60){
-    console.log(`Result ::: You Got B Grade`)
-  }
-  else if(percentage >= 50){
-    console.log(`Result ::: You Got C Grade`)
-  }
-  else{
-    console.log(`Result ::: Fail`)
-  }
-};
+//   if(percentage >= 80){
+//     console.log(`Result ::: You Got A+ Grade`)
+//   }
+//   else if(percentage >= 70){
+//     console.log(`Result ::: You Got A Grade`)
+//   }
+//   else if(percentage >= 60){
+//     console.log(`Result ::: You Got B Grade`)
+//   }
+//   else if(percentage >= 50){
+//     console.log(`Result ::: You Got C Grade`)
+//   }
+//   else{
+//     console.log(`Result ::: Fail`)
+//   }
+// };
 
-studentDataFunc();
+// studentDataFunc();
 
 
 
-// const percentage = Math.ceil(sum / 500 * 100);
-// console.log('Total Marks : 500' );
-// console.log('Obtained Marks : ', sum);
-// console.log('Percentage : ', percentage);
-
-// if (percentage >= 80) {
-//     console.log('Pass : Grad A')
-// } else if (percentage >= 70) {
-//     console.log('Pass : Grad B')
-// } else if (percentage >= 65) {
-//     console.log('Pass : Grad C')
-// } else {
-//     console.log('Fail')
+// function xmlToString(xml, callback) {
+//     // Assume some asynchronous operation to convert XML to string
+//     setTimeout(() => {
+//         const result = "XML String Representation";
+//         callback(result);
+//     }, 1000);
 // }
+
+// const curry = (fn) => {
+//     return function curried(...args) {
+//         if (args.length >= fn.length) {
+//             return fn(...args);
+//         } else {
+//             return function (...nextArgs) {
+//                 return curried(...args, ...nextArgs);
+//             };
+//         }
+//     };
+// };
+
+// const curryXmlToString = curry(xmlToString);
+
+// function convertToString(converterFunction, data, callback) {
+//     converterFunction(data, (result) => {
+//         callback(result);
+//     });
+// }
+
+// (function () {
+//     const jsonData = { key: "value" };
+//     const xmlData = "<root><element>value</element></root>";
+
+//     convertToString(curryXmlToString, xmlData, (xmlString) => {
+//         console.log("XML to String:", xmlString);
+//     });
+
+//     convertToString(JSON.stringify, jsonData, (jsonString) => {
+//         console.log("JSON to String:", jsonString);
+//     });
+// })();
+
+// create functions any 3 to xml to json 
+//
+
+// const promptRunning = () => {
+
+  // }
+  
+  // promptRunning()
+  // prompt('give the data to convert into json')  
