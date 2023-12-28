@@ -1,98 +1,144 @@
-var xml2json = require('xml-to-json')
-var convert = require('xml-js');
-var readlineSync = require('readline-sync')
-var xml2js = require('xml2js')
+// second attempt
+
+// var xml2json = require("xml-to-json");
+// var convert = require("xml-js");
+// var readlineSync = require("readline-sync");
+// var xml2js = require("xml2js");
+
+// var userGoingToThisPath = readlineSync.question(
+//   "Where do you want to go?\n V1 \n V2 \n V3"
+// );
+
+// const xmlToJson = (xmlString, callback) => {
+//   const parser = new xml2js.Parser();
+
+//   parser.parseString(xmlString, (err, result) => {
+//     if (err) {
+//       callback(err, null);
+//     } else {
+//       callback(null, result);
+//     }
+//   });
+// };
+
+// const XMLTOJSONFUNC = () => {
+//   var inputFromUser = readlineSync.question(
+//     "Give me the data to convert XML to Json: "
+//   );
+
+//   console.log(inputFromUser);
+
+//   // Example usage:
+//   const xmlString = inputFromUser || "<root><element>value</element></root>";
+
+//   xmlToJson(xmlString, (err, jsonResult) => {
+//     if (err) {
+//       console.error("Error converting XML to JSON:", err);
+//     } else {
+//       console.log("JSON Result:", jsonResult);
+//     }
+//   });
+// };
+
+// const firstFunction = () => {
+//   if (userGoingToThisPath === "1") {
+//     console.log("Executing the first function...");
+//     XMLTOJSONFUNC();
+//   } else {
+//     console.log("Invalid input. Exiting...");
+//   }
+// };
+
+// // Call the first function
+// firstFunction();
 
 
 
 
-// const prompt = require('prompt-sync')();
-var userGoingToThisPath = readlineSync.question('Where you want a go \n V1 \n V2 \n V3');
 
-function firstFunction(callback) {
-    // const userInput = prompt('Press 1 to execute the first function: ');
 
-    if (userGoingToThisPath === '1') {
-        console.log('Executing the first function...');
-        // Call your first function here
-        callback();
-    } else {
-        console.log('Invalid input. Exiting...');
-    }
-}
 
-function secondFunction() {
-  if (userGoingToThisPath === '2') {
-    console.log('Executing the second function...');
-    // Call your first function here
-    callback();
-} else {
-    console.log('Invalid input. Exiting...');
-}
-}
-function thirdFunction() {
-  if (userGoingToThisPath === '3') {
-    console.log('Executing the third function...');
-    // Call your first function here
-    callback();
-} else {
-    console.log('Invalid input. Exiting...');
-}
-}
+
+
+
+// fist attempt
+// var xml2json = require("xml-to-json");
+// var convert = require("xml-js");
+// var readlineSync = require("readline-sync");
+// var xml2js = require("xml2js");
+
+// // const prompt = require('prompt-sync')();
+// var userGoingToThisPath = readlineSync.question(
+//   "Where you want a go \n V1 \n V2 \n V3"
+// );
+
+// const XMLTOJSONFUNC = () => {
+//   var inputFromUser = readlineSync.question(
+//     "Give me the data convert XML to Json"
+//   );
+//   console.log(inputFromUser);
+//   function xmlToJson(xmlString, callback) {
+//     const parser = new xml2js.Parser();
+
+//     parser.parseString(xmlString, (err, result) => {
+//       if (err) {
+//         callback(err, null);
+//       } else {
+//         callback(null, result);
+//       }
+//     });
+//   }
+
+//   // Example usage:
+//   const xmlString = inputFromUser || "<root><element>value</element></root>";
+
+//   xmlToJson(xmlString, (err, jsonResult) => {
+//     if (err) {
+//       console.error("Error converting XML to JSON:", err);
+//     } else {
+//       console.log("JSON Result:", jsonResult);
+//     }
+//   });
+// };
+// function firstFunction(XMLTOJSONFUNC) {
+//   // const userInput = prompt('Press 1 to execute the first function: ');
+
+//   if (userGoingToThisPath === "1") {
+//     console.log("Executing the first function...");
+//     XMLTOJSONFUNC()
+//     // Call your first function here
+//     // customFunction();
+//   } else {
+//     console.log("Invalid input. Exiting...");
+//   }
+// }
+
+// function secondFunction(customFunction) {
+//   if (userGoingToThisPath === "2") {
+//     console.log("");
+//     customFunction()
+//   } else {
+//     console.log("Executing the second function....");
+//   }
+// }
+// function thirdFunction() {
+//   if (userGoingToThisPath === "3") {
+//     console.log("Executing the third function...");
+//   } else {
+//     console.log("Invalid input. Exiting...");
+//   }
+// }
 
 // Calling the first function with the second function as a callback
-firstFunction(secondFunction);
+// firstFunction(secondFunction());
 
-
-
-
-var inputFromUser = readlineSync.question('Give me the data convert XML to Json');
-console.log(inputFromUser)
-
-
-// <?xml version="1.0" encoding="utf-8"?>
-// <note importance="high" logged="true">
-//     <title>Happy</title>
-//     <todo>Work</todo>
-//     <todo>Play</todo>
-// </note>
-
-function xmlToJson(xmlString, callback) {
-  const parser = new xml2js.Parser();
-  
-  parser.parseString(xmlString, (err, result) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, result);
-    }
-  });
-}
-
-// Example usage:
-const xmlString =   inputFromUser || '\<root><element>value</element></root>';
-
-xmlToJson(xmlString, (err, jsonResult) => {
-  if (err) {
-    console.error('Error converting XML to JSON:', err);
-  } else {
-    console.log('JSON Result:', jsonResult);
-  }
-});
-
-
-
-// if(inputFromUser === '1'){
-
+// function customFunction() {
+//   console.log("Custom function executed.");
+//   // Add your custom logic here
 // }
-// else if (inputFromUser === '2'){
-  
-// }
-// else if (inputFromUser === '3'){
 
-// }
-// var prompt = require('prompt');
-// prompt.start()
+firstFunction(XMLTOJSONFUNC())
+
 
 // FUNCTION KA KAAM KISI PARTICULAR TASK KO PERFORM KERNE KA HOTA HAI
 // 26-12-2023
@@ -190,7 +236,6 @@ xmlToJson(xmlString, (err, jsonResult) => {
 
 // higher order function
 
-
 // hello(sayHasan('hasan'))
 
 // hello(sayHasan('hasan'))
@@ -279,7 +324,7 @@ xmlToJson(xmlString, (err, jsonResult) => {
 // console.log(obj3.obj2.name, obj1.name)
 
 // const studentDataFunc = (value) => {
-  
+
 //   let emptyArray = [];
 //   var studentSub = prompt(`write your subjects please! `);
 //   let totalMarks = studentSub * 100
@@ -312,8 +357,6 @@ xmlToJson(xmlString, (err, jsonResult) => {
 // };
 
 // studentDataFunc();
-
-
 
 // function xmlToString(xml, callback) {
 //     // Assume some asynchronous operation to convert XML to string
@@ -356,12 +399,12 @@ xmlToJson(xmlString, (err, jsonResult) => {
 //     });
 // })();
 
-// create functions any 3 to xml to json 
+// create functions any 3 to xml to json
 //
 
 // const promptRunning = () => {
 
-  // }
-  
-  // promptRunning()
-  // prompt('give the data to convert into json')  
+// }
+
+// promptRunning()
+// prompt('give the data to convert into json')
