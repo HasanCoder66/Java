@@ -1,3 +1,101 @@
+// Third attempt
+
+var xml2json = require("xml-to-json");
+var convert = require("xml-js");
+var readlineSync = require("readline-sync");
+var xml2js = require("xml2js");
+
+var userGoingToThisPath = readlineSync.question(
+  "Where do you want to go?\n 1. Path 1\n 2. Path 2\n 3. Path 3\n"
+);
+
+const xmlToJson = (xmlString, callback) => {
+  const parser = new xml2js.Parser();
+
+  parser.parseString(xmlString, (err, result) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, result);
+    }
+  });
+};
+
+const XMLTOJSONFUNC = () => {
+  var inputFromUser = readlineSync.question(
+    "Give me the data to convert XML to Json: "
+  );
+
+  // console.log(inputFromUser);
+
+  // Example usage:
+  const xmlString = inputFromUser || "<root><element>value</element></root>";
+
+  xmlToJson(xmlString, (err, jsonResult) => {
+    if (err) {
+      console.error("Error converting XML to JSON:", err);
+    } else {
+      console.log("JSON Result:", jsonResult);
+    }
+  });
+};
+
+// Higher-order function to execute a specific path
+const executePath = (pathNumber, callback) => {
+  return () => {
+    if (userGoingToThisPath === pathNumber) {
+      console.log(`Executing path ${pathNumber}...`);
+      callback();
+    } else {
+      console.log("Invalid input. Exiting...");
+    }
+  };
+};
+
+// Curry function for executePath
+const curryExecutePath = (pathNumber) => (callback) => executePath(pathNumber, callback);
+
+// Curry functions for paths 2 and 3
+const executePath2 = curryExecutePath("2");
+const executePath3 = curryExecutePath("3");
+
+// Call the appropriate path based on user input
+switch (userGoingToThisPath) {
+  case "1":
+    executePath("1", XMLTOJSONFUNC)();
+    break;
+  case "2":
+    executePath2(XMLTOJSONFUNC)();
+    break;
+  case "3":
+    executePath3(XMLTOJSONFUNC)();
+    break;
+  default:
+    console.log("Invalid input. Exiting...");
+    break;
+}
+
+const firstFunction = () => {
+  if (userGoingToThisPath === "1") {
+    console.log("Executing the first function...");
+    // XMLTOJSONFUNC();
+  } else {
+    console.log("Invalid input. Exiting...");
+  }
+};
+
+// Call the first function
+// firstFunction();
+
+
+
+
+
+
+
+
+
+
 // second attempt
 
 // var xml2json = require("xml-to-json");
