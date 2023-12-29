@@ -1,24 +1,7 @@
 import Video from '../model/videoSchema.js'
 
-// export const addVideo = async (req, res) => {
-//     try {
-//         // Check if req.user is defined before accessing its properties
-//         const userId = req.user ? req.user.id : null;
 
-//         const newVideo = new Video({
-//             userId: userId, // Set userId to the actual user ID or null
-//             ...req.body
-//         });
-
-//         const savedVideo = await newVideo.save();
-//         res.status(200).json(savedVideo);
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).json({ error: "Internal Server Error" });
-//     }
-// };
-
-
+// addVideo function ===>
 export const addVideo = async (req , res ) => {
     const newVideo = new Video({
         userId : req.body.userId,
@@ -28,6 +11,24 @@ export const addVideo = async (req , res ) => {
         const savedVideo = await newVideo.save()
         res.status(200).json(savedVideo)
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
 }
+
+
+// getVideo function ===>
+
+export const getVideo = async (req, res)=> {
+try {
+    const video = await Video.findById(req.params.id)
+    res.status(200).json(video)
+    
+} catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal Server Error" });
+}
+}
+
+// updateVideo function ===>
+
