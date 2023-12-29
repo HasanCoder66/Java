@@ -84,8 +84,6 @@ const firstFunction = () => {
   }
 };
 
-// Call the first function
-// firstFunction();
 
 
 
