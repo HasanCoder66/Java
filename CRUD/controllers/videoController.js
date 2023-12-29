@@ -58,7 +58,17 @@ export const updateVideo = async (req, res) => {
 
 // delete video function ===>
 
-// export const deleteVideo = () => {
-//   try {
-//   } catch (error) {}
-// };
+export const deleteVideo = async (req , res) => {
+  try {
+    const video = await Video.findById(req.params.id)
+    if(!video) return res.status(404).send({
+        message : 'video not found'
+    })
+    const deleteVideo = await Video.findByIdAndDelete(req.params.id)
+    res.status(200).json({
+        message : 'video has been deleted'
+    })
+  } catch (error) {
+    console.log(error)
+  }
+};

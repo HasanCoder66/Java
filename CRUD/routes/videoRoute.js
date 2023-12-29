@@ -17,7 +17,7 @@ videoRouter.put('/:id' , updateVideo)
 
 
 // delete api
-videoRouter.delete('delete/:id' , deleteVideo)
+videoRouter.delete('/:id' , deleteVideo)
 
 
 export default videoRouter
