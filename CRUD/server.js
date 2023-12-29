@@ -3,7 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import videoRouter from "./routes/videoRoute.js";
-
+import authRouter from "./routes/authRoute.js";
 
 // initiallize app ===>
 const app = express();
@@ -19,6 +19,8 @@ dotenv.config()
 
 
 // MiddleWares ===>
+app.use(express.json())
+app.use('/api/auth', authRouter)
 app.use('/api/video', videoRouter)
 
 
