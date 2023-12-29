@@ -1,5 +1,5 @@
 import express from 'express'
-import {addVideo , getVideo} from '../controllers/videoController.js'
+import {addVideo , getVideo , updateVideo , deleteVideo} from '../controllers/videoController.js'
 
 
 const videoRouter = express.Router()
@@ -13,11 +13,11 @@ videoRouter.post('/addVideo', addVideo)
 
 
 // put api
-// videoRouter.put('/:id' , updateVideo)
+videoRouter.put('/:id' , updateVideo)
 
 
 // delete api
-// videoRouter.delete('/:id')
+videoRouter.delete('delete/:id' , deleteVideo)
 
 
 export default videoRouter
