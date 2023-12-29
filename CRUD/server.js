@@ -1,11 +1,29 @@
+// Import all dependencies ===>
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
+import videoRouter from "./routes/videoRoute.js";
 
+
+// initiallize app ===>
+const app = express();
+
+
+// Port NO ===>
 const PORT = 9500;
+
+
+// initiallize dotenv  ===>
 dotenv.config()
 
-app.use('/api/video')
+
+
+// MiddleWares ===>
+app.use('/api/video', videoRouter)
+
+
+
+// Backend Connect function ===>
 const connectToDB = () => {
   mongoose
     .connect(process.env.MONGO_URI)
@@ -16,8 +34,14 @@ const connectToDB = () => {
       throw error;
     });
 };
-const app = express();
+
+
+
+// Server listening ===>
 app.listen(PORT, () => {
   console.log(`Server connected on this ${PORT}`);
+
+
+//   call Function in server listening 
   connectToDB()
 });
