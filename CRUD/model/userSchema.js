@@ -14,27 +14,27 @@ const userSchema = new mongoose.Schema({
 
     password : {
         type :String,
-        // required : true
+        required : true
     },
 
-    img : {
-        type :String
-    },
+    // img : {
+    //     type :String
+    // },
 
-    subscribers : {
-        type :Number,
-        default : 0
-    },
+    // subscribers : {
+    //     type :Number,
+    //     default : 0
+    // },
 
-    subscribedUsers : {
-        type :[String],
-        default : 0
-    },
+    // subscribedUsers : {
+    //     type :[String],
+    //     default : 0
+    // },
 
-    fromGoogle : {
-        type : Boolean,
-        default : false,
-    },
+    // fromGoogle : {
+    //     type : Boolean,
+    //     default : false,
+    // },
 },
     
 {timestamps : true}
