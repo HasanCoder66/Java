@@ -28,7 +28,8 @@ app.use('/api/video', videoRouter)
 // Backend Connect function ===>
 const connectToDB = () => {
   mongoose
-    .connect(process.env.MONGO_URI)
+    // .connect('mongodb+srv://muhammadhasan3866:a3mCL1RvlzTVNBSj@taskcoderatory.zjzmqt3.mongodb.net/TaskCoderatory?retryWrites=true&w=majority')
+    .connect(process.env.CODERATORYMONGO_URI)
     .then(() => {
       console.log("Connected to DB");
     })
